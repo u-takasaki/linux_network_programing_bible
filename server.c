@@ -63,7 +63,7 @@ int server_socket(const char *portnm)
 	}
 	(void)fprintf(stderr, "port=%s\n", sbuf);
 	/*create socket*/
-	if((soc = socket(res0->ai_family, res0->ai_socktype, res0->ai_protocol)) == 1){
+	if((soc = socket(res0->ai_family, res0->ai_socktype, res0->ai_protocol)) == -1){
 		perror("socket");
 		freeaddrinfo(res0);
 		return (-1);
